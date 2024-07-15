@@ -11,22 +11,22 @@ namespace AnimatedButton
 {
     public class LateralAnimatedButton : Button
     {
-        //used for incremental speed animation -> only if UseSmoothSpeedIncrement = true
+        
         Stopwatch sw = new Stopwatch();
-        Timer Animation { get; set; } = new Timer(); //Timer to increment the x value of the pie -> right side
-        Timer AnimationBack { get; set; } = new Timer(); //Timer to decrement the x value of the pie -> right side
-        public int AnimationInterval { get; set; } = 1; //Timer Interval = how many ms to trigger the tick event
-        public string CustomButtonText { get; set; } = ""; //Text of the button ->NB: don't use standard text property
-        public Color BackHoverColor { get; set; } = Color.Purple; //BackColor on MouseHover of the pie
-        public Color TextHoverColor { get; set; } = Color.White; //Forecolor of CustomButtonText when the mouse is hover
-        public int BackgroundSpeed { get; set; } = 40; //How many pixel for every timer tick
-        public double SmoothCorrectionFactor { get; set; } = 1.5F; //Stopwatch total seconds elapsed * SmoothCorrectionFactor -> this value is added up to incremental_x
-        public bool UseSmoothSpeedIncrement { get; set; } = true; //Enable or disable incremental speed animation over time
+        Timer Animation { get; set; } = new Timer();
+        Timer AnimationBack { get; set; } = new Timer();
+        public int AnimationInterval { get; set; } = 1; 
+        public string CustomButtonText { get; set; } = ""; 
+        public Color BackHoverColor { get; set; } = Color.Green;
+        public Color TextHoverColor { get; set; } = Color.White; 
+        public int BackgroundSpeed { get; set; } = 40;
+        public double SmoothCorrectionFactor { get; set; } = 1.5F; 
+        public bool UseSmoothSpeedIncrement { get; set; } = true; 
         private int incremental_x = 1;
         private bool DrawString = false;
         public LateralAnimatedButton()
         {
-            //double buffer -> less flickering
+            
             this.SetStyle(System.Windows.Forms.ControlStyles.UserPaint |
                 System.Windows.Forms.ControlStyles.AllPaintingInWmPaint |
                 System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer, true);
@@ -35,18 +35,14 @@ namespace AnimatedButton
             AnimationBack.Interval = AnimationInterval;
             Animation.Tick += ButtonAnimation;
             AnimationBack.Tick += ButtonAnimationBack;
-            //Standard values
+            
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             this.BackColor = Color.FromArgb(240, 240, 240);//ligth grey
             this.ForeColor = Color.FromArgb(100, 100, 100);//dark grey
             this.Text = ""; //we want to override the standard text 
         }
-        /// <summary>
-        /// Triggered every AnimationBack tick
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+       
         private void ButtonAnimationBack(object sender, EventArgs e)
         {
             if (UseSmoothSpeedIncrement)
@@ -64,11 +60,7 @@ namespace AnimatedButton
             }
             this.Invalidate();
         }
-        /// <summary>
-        /// Triggered every Animation tick
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
         private void ButtonAnimation(object sender, EventArgs e)
         {
             if (UseSmoothSpeedIncrement)
