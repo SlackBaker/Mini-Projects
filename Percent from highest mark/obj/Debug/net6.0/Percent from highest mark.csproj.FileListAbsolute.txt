@@ -1,0 +1,15 @@
+D:\c#\Percent from highest mark\obj\Debug\net6.0\Percent from highest mark.csproj.AssemblyReference.cache
+D:\c#\Percent from highest mark\obj\Debug\net6.0\Percent from highest mark.GeneratedMSBuildEditorConfig.editorconfig
+D:\c#\Percent from highest mark\obj\Debug\net6.0\Percent from highest mark.AssemblyInfoInputs.cache
+D:\c#\Percent from highest mark\obj\Debug\net6.0\Percent from highest mark.AssemblyInfo.cs
+D:\c#\Percent from highest mark\obj\Debug\net6.0\Percent from highest mark.csproj.CoreCompileInputs.cache
+D:\c#\Percent from highest mark\bin\Debug\net6.0\Percent from highest mark.exe
+D:\c#\Percent from highest mark\bin\Debug\net6.0\Percent from highest mark.deps.json
+D:\c#\Percent from highest mark\bin\Debug\net6.0\Percent from highest mark.runtimeconfig.json
+D:\c#\Percent from highest mark\bin\Debug\net6.0\Percent from highest mark.dll
+D:\c#\Percent from highest mark\bin\Debug\net6.0\Percent from highest mark.pdb
+D:\c#\Percent from highest mark\obj\Debug\net6.0\Percent from highest mark.dll
+D:\c#\Percent from highest mark\obj\Debug\net6.0\refint\Percent from highest mark.dll
+D:\c#\Percent from highest mark\obj\Debug\net6.0\Percent from highest mark.pdb
+D:\c#\Percent from highest mark\obj\Debug\net6.0\Percent from highest mark.genruntimeconfig.cache
+D:\c#\Percent from highest mark\obj\Debug\net6.0\ref\Percent from highest mark.dll
