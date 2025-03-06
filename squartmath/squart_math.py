@@ -8,3 +8,10 @@ def solve_quadratic(a,b,c):
         print("x1 = ", x1, " x2 = ", x2)
     else:
         print("error")
+
+def viet_quadratic(x1,x2):
+    p = -1*(x1+x2)
+    q = x1*x2
+    print('p = ', p)
+    print('q = ', q)
+
