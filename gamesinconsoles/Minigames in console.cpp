@@ -5,8 +5,14 @@
 #include <map>
 #include <ctime>
 #include <cstdlib>
+#include <Windows.h>
 
 using namespace std;
+
+void SetColor(int text, int background = 0) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, text + (background << 4));
+}
 
 class guessTheNumber {
 public:
