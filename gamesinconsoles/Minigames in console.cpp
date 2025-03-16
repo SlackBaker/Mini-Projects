@@ -5,7 +5,7 @@
 #include <map>
 #include <ctime>
 #include <cstdlib>
-#include <Windows.h>
+#include <windows.h>
 
 using namespace std;
 
@@ -213,14 +213,31 @@ public:
     }
 };
 
+class Charlie {
+public:
+    void Ask() {
+
+    }
+};
+
 int main() {
     guessTheNumber guessNumber;
     guessLetter guessletter;
     TicTacToe tictactoe;
     GuessWords guessword;
+    Charlie charlie;
     int choose;
 
-    cout << "Choose games: exit[0] random number[1], random letter[2] TicTacToe[3] Guess a word[4]: ";
+    cout << "Choose games: exit[0], ";
+    SetColor(2);
+    cout << "random number[1], ";
+    SetColor(3);
+    cout << "random letter[2], ";
+    SetColor(4);
+    cout << "TicTacToe[3], ";
+    SetColor(5);
+    cout << "Guess a word[4]: ";
+    SetColor(7);
     cin >> choose;
 
     switch (choose) {
