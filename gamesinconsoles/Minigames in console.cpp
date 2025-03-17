@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <windows.h>
 
+
 using namespace std;
 
 void SetColor(int text, int background = 0) {
@@ -26,14 +27,20 @@ public:
 
             if (answer == 0) {
                 cout << "We are turning off the game!" << endl;
+                system("cls");
                 return;
             }
 
             if (answer == randomNum) {
+                SetColor(2);
                 cout << "Yes you guessed!\n";
+                SetColor(7);
+
             }
             else {
+                SetColor(4);
                 cout << "You didn't guess. It was: " << randomNum << endl;
+                SetColor(7);
             }
         }
     }
@@ -57,14 +64,19 @@ public:
 
             if (letter == "0") {
                 cout << "We are turning off the game!" << endl;
+                system("cls");
                 return;
             }
 
             if (letter == randomLetter) {
+                SetColor(2);
                 cout << "You guessed!\n";
+                SetColor(7);
             }
             else {
+                SetColor(4);
                 cout << "You didn't guess. It was: " << randomLetter << endl;
+                SetColor(7);
             }
         }
     }
@@ -215,8 +227,26 @@ public:
 
 class Charlie {
 public:
-    void Ask() {
+    vector<string> responses = { "Yes", "No" };
 
+    void Ask() {
+        while (true) {
+            string ask;
+            cout << "Ask to Charlie anything to exit enter 0: ";
+            getline(cin, ask);
+
+            srand(static_cast<unsigned int>(time(0)));
+
+            int randomIndex = rand() % responses.size();
+            string response = responses[randomIndex];
+            if (ask == "0") {
+                system("cls");
+                return;
+            }
+            else {
+                cout << "Charlie says: " << response << endl;
+            }     
+        }   
     }
 };
 
@@ -228,34 +258,44 @@ int main() {
     Charlie charlie;
     int choose;
 
-    cout << "Choose games: exit[0], ";
-    SetColor(2);
-    cout << "random number[1], ";
-    SetColor(3);
-    cout << "random letter[2], ";
-    SetColor(4);
-    cout << "TicTacToe[3], ";
-    SetColor(5);
-    cout << "Guess a word[4]: ";
-    SetColor(7);
-    cin >> choose;
+    while (true) {
+        cout << "Choose games: exit[0], ";
+        SetColor(2);
+        cout << "random number[1], ";
+        SetColor(3);
+        cout << "random letter[2], ";
+        SetColor(4);
+        cout << "TicTacToe[3], ";
+        SetColor(5);
+        cout << "Guess a word[4], ";
+        SetColor(6);
+        cout << "Charlie Charlie are you here? [5]: ";
+        SetColor(7);
+        cin >> choose;
+        system("cls");
 
-    switch (choose) {
-    case 0:
-        return 0;
-    case 1:
-        guessNumber.guess();
-        break;
-    case 2:
-        guessletter.guesslett();
-        break;
-    case 3:
-        tictactoe.playGame();
-        break;
-    case 4:
-        guessword.PlayGame();
-        break;
-    default:
-        cout << "There is no other games like that.\n";
+        switch (choose) {
+        case 0:
+            return 0;
+        case 1:
+            guessNumber.guess();
+            break;
+        case 2:
+            guessletter.guesslett();
+            break;
+        case 3:
+            tictactoe.playGame();
+            break;
+        case 4:
+            guessword.PlayGame();
+            break;
+        case 5:
+            cin.ignore();
+            charlie.Ask();
+            break;
+        default:
+            cout << "There is no other games like that.\n";
+        }
     }
+    
 }
