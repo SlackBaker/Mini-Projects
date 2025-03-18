@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Перекладач</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input, button { padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h1>Перекладач</h1>
+    <form method="post">
+        <input type="text" name="word" placeholder="Введіть слово англійською" required>
+        <button type="submit">Перекласти</button>
+    </form>
+    {% if translation %}
+        <h2>Переклад: {{ translation }}</h2>
+    {% endif %}
+</body>
+</html>

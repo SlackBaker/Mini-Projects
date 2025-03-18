@@ -1,0 +1,23 @@
+.logo {
+    display: flex;            /* Включає флекс-блок */
+    justify-content: center;  /* Горизонтальне центровання */
+    align-items: center;      /* Вертикальне центровання */
+    height: 100vh;            /* Висота блоку на весь екран */
+    background-color: #f0f0f0;
+    gap: 20px;                /* Відстань між кнопками */
+}
+
+#translator, #tips, #practise {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#translator:hover, #tips:hover, #practise:hover {
+    background-color: #0056b3; /* Ефект при наведенні */
+}

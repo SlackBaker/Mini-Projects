@@ -1,0 +1,26 @@
+body{
+    background-color: chartreuse;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+.button{
+    padding: 10px 20px;       /* Відступи кнопки */
+    font-size: 18px;          /* Розмір шрифту */
+    color: white;             /* Колір тексту */
+    background-color: #007BFF; /* Фон кнопки */
+    border: none;             /* Без рамки */
+    border-radius: 5px;       /* Заокруглені кути */
+    cursor: pointer;          /* Іконка курсора при наведенні */
+    transition: background-color 0.3s; /* Анімація при наведенні */
+
+}
+.container{
+    display: flex;            /* Включає флекс-блок */
+    justify-content: center;  /* Горизонтальне центровання */
+    align-items: center;      /* Вертикальне центровання */
+    height: 100vh;            /* Висота блоку на весь екран */
+    background-color: #f0f0f0; /* Фон для кращої видимості */
+}
