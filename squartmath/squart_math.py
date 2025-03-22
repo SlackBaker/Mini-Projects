@@ -13,8 +13,7 @@ def solve_quadratic(a,b,c):
 def viet_quadratic(x1,x2):
     p = -1*(x1+x2)
     q = x1*x2
-    print('p = ', p)
-    print('q = ', q)
+    return p, q
 
 def draw_graphics(x,y):
     pass
