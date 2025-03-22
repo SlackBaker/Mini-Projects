@@ -1,4 +1,5 @@
 import math
+import matplotlib.pyplot as plt
 
 def solve_quadratic(a,b,c):
     D = (b**2) - (4*a*c)
@@ -15,3 +16,5 @@ def viet_quadratic(x1,x2):
     print('p = ', p)
     print('q = ', q)
 
+def draw_graphics(x,y):
+    pass
