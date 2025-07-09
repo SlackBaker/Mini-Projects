@@ -1,32 +1,42 @@
 import os
 import shutil
 
-folder_to_sort = ""
-i = str(input("Enter your directory : to see what do you have in it:"))
-root_folder = i
+class FindFiles:
+    def __init__(self):
+        self.root_folder = str(input("Enter root folder:"))
 
-def showfiles():
+    def showfiles(self):
+        if not os.path.exists(self.root_folder):
+            print(" Directory not found!")
+            return
 
-    if not os.path.exists(root_folder):
-        print("❌ Directory not found!")
-        return
+        for current_folder, subfolders, files in os.walk(self.root_folder):
+            print(f" Folder: {current_folder}")
 
-    for current_folder, subfolders, files in os.walk(root_folder):
-        print(f"📁 Папка: {current_folder}")
+            if subfolders:
+                print("   Subfolders:")
+                for sub in subfolders:
+                    print(f"    - {sub}")
 
-        if subfolders:
-            print("  📂 Підпапки:")
-            for sub in subfolders:
-                print(f"    - {sub}")
+            if files:
+                print("   Files:")
+                for file in files:
+                    print(f"    - {file}")
 
-        if files:
-            print("  📄 Файли:")
-            for file in files:
-                print(f"    - {file}")
+            print("-" * 40)
 
-        print("-" * 40)
-
+# --- Головний код (поза класом) ---
 try:
-    showfiles()
-except FileNotFoundError:
-    print("Not found directory")
+    finder = FindFiles()
+    finder.showfiles()
+except Exception as e:
+    print(f" Error: {e}")
+
+class move_summver:
+    def __init__(self):
+        self.from_folder = str(input("Enter from where you want to move files"))
+        self.to_folder = str(input("to:"))
+        self.files = str(input("Prefics to move:"))
+
+    def move_files(self):
+        pass
