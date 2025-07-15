@@ -1,0 +1,20 @@
+{
+  "menu": "Menu",
+  "show_files": "1. Show Files",
+  "move_files": "2. Move Files",
+  "exit": "3. Exit",
+  "enter_choice": "Enter choice:",
+  "invalid_choice": "Invalid choice!",
+  "enter_root": "Enter root folder:",
+  "folder": "Folder:",
+  "subfolders": "Subfolders:",
+  "files": "Files:",
+  "source_dir": "Enter source folder to move files from:",
+  "target_dir": "Enter target folder to move files to:",
+  "extension": "Enter file extension to move (.png, .txt...):",
+  "source_not_found": "Source folder not found!",
+  "target_created": "Target folder created.",
+  "no_files_found": "No files found with that extension!",
+  "moving": "Moving",
+  "shutting_down": "Shutting down..."
+}
