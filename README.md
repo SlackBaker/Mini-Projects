@@ -6,5 +6,6 @@ This repository contains random mini-projects that can be useful for beginners.
 - **LateralAnimatedButton** – a class for those who use C# WinForms. It allows you to create animated buttons.  
 - **GamesInConsole** – a project with console games such as Tic-Tac-Toe, "Guess the Number," "Guess the Letter," and more. The game is in developing and it's right now available pre-classic version. 
 - **Squart math** - is mini module for python that will count you quadratics I'm still working on it and  I will try to make it better
+- **Sort files** - is a program thta finds files or move them into another directory
 
 I make them for fun
