@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Solver</title>
+    <meta name="google-site-verification" content="T1jZkvFO8ZLsgTHbkRHKSbSLkzIX1lYXrr76bOmCbAM" />
+    <meta name="Desription" content="Algebra Solver">
+    <meta name="keywords" content="Algebra Solver">
+    <meta name="author" content="Slack Baker">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+        });
+    </script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .history { margin-top: 20px; }
+        .history table { width: 100%; border-collapse: collapse; }
+        .history th, .history td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .history th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+<center>
+    <h1>Математичний калькулятор</h1>
+    <form method="POST">
+        <label for="question">Введіть математичний вираз:</label><br>
+        <input type="text" id="question" name="question" value="{{ question }}" placeholder="Наприклад: x^2+2*x=0 або ∫x^2"><br><br>
+        <button type="submit">Розв’язати</button>
+        <button type="submit" formaction="{{ url_for('clear_history') }}">Очистити історію</button>
+    </form>
+
+    {% if answer %}
+        <h3>Відповідь:</h3>
+        <p>\( {{ answer_latex }} \)</p>
+    {% endif %}
+</center>
+
+    {% if history %}
+        <div class="history">
+            <h3>Історія запитів:</h3>
+            <table>
+                <tr>
+                    <th>Тип задачі</th>
+                    <th>Запит</th>
+                    <th>Відповідь</th>
+                </tr>
+                {% for entry in history %}
+                    <tr>
+                        <td>{{ entry.task_type }}</td>
+                        <td>{{ entry.question }}</td>
+                        <td>\( {{ entry.response_latex }} \)</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endif %}
+</body>
+</html>
